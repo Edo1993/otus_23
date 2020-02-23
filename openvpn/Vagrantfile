@@ -5,13 +5,7 @@ MACHINES = {
 :servertun => {
         :box_name => "centos/7",
         :net => [
-                   {ip: '192.168.11.150', adapter: 2, netmask: "255.255.255.0", virtualbox__intnet: "vpn-net"},
-                ]
-  },
-:clienttun => {
-        :box_name => "centos/7",
-        :net => [
-                   {ip: '192.168.11.151', adapter: 2, netmask: "255.255.255.0", virtualbox__intnet: "vpn-net"},
+                   {ip: '192.168.10.150', adapter: 2, netmask: "255.255.255.0", virtualbox__intnet: "vpn-net"},
                 ]
   },
 }
@@ -37,7 +31,6 @@ Vagrant.configure("2") do |config|
         box.vm.provision "shell", inline: <<-SHELL
           mkdir -p ~root/.ssh
                 cp ~vagrant/.ssh/auth* ~root/.ssh
-          yum install openssh-clients
         SHELL
 
         case boxname.to_s
