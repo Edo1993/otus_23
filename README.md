@@ -65,3 +65,8 @@ systemctl -f enable openvpn@client.service
 systemctl start openvpn@client.service
 ```
 ![Img_alt](https://github.com/Edo1993/otus_23/blob/master/openvpn/22.png)
+
+После старта сервиса - не добавляется маршшрут, и, соответственно, туннель не создаётся
+![Img_alt](https://github.com/Edo1993/otus_23/blob/master/openvpn/23.png)
+
+![Img_alt](https://github.com/Edo1993/otus_23/blob/master/openvpn/24.png)
