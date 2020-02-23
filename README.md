@@ -29,6 +29,39 @@ ________________________________________________________________________________
 
 2. Поднять RAS на базе OpenVPN с клиентскими сертификатами, подключиться с локальной машины на виртуалку
 
+ссылки, которые здорово помогли
+
 https://www.golinuxcloud.com/install-openvpn-server-easy-rsa-3-centos-7/
+
 https://itdraft.ru/2019/04/18/ustanovka-i-nastrojka-openvpn-klienta-i-servera-i-easy-rsa-3-v-centos-7/
+
 https://1cloud.ru/help/linux/kak-ustanovit-i-nastroit-openvpn-na-centos7
+
+
+
+В [папке](https://github.com/Edo1993/otus_23/tree/master/openvpn) vagrantfile + скрипт, который поднимает сервер с openvpn.
+![Img_alt](https://github.com/Edo1993/otus_23/blob/master/openvpn/21.png)
+На стороне клиента выполняем команды:
+
+- вытащить с сервера ключи
+```
+#без папки client не создалось, пришлось предварительно её ручками запилить
+vagrant ssh -c 'cat /opt/ca.crt' > /home/client/ca.crt
+vagrant ssh -c 'cat /opt/client.crt' > /home/client/client.crt
+vagrant ssh -c 'cat /opt/client.key' > /home/client/client.key
+vagrant ssh -c 'cat /opt/dh2048.pem' > /home/client/dh2048.pem
+```
+- установить openvpn
+```
+apt-get install openvpn easy-rsa -y
+```
+- перенести в папку с openvpn ключи и конфиг клиента
+```
+cp c* /etc/openvpn/client/
+```
+- Запустить сервис
+```
+systemctl -f enable openvpn@client.service
+systemctl start openvpn@client.service
+```
+![Img_alt](https://github.com/Edo1993/otus_23/blob/master/openvpn/22.png)
