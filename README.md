@@ -69,5 +69,6 @@ systemctl start openvpn@client.service
  ![Image_alt](https://github.com/Edo1993/otus_23/blob/master/15.png)
 
 После старта сервиса проверяем доступ.
+
 (на этом моменте я заплакала)
  ![Image_alt](https://github.com/Edo1993/otus_23/blob/master/14.png)
