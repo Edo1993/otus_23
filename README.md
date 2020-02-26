@@ -40,7 +40,9 @@ https://1cloud.ru/help/linux/kak-ustanovit-i-nastroit-openvpn-na-centos7
 
 
 В [папке](https://github.com/Edo1993/otus_23/tree/master/openvpn) vagrantfile + скрипт, который поднимает сервер с openvpn.
-![Img_alt](https://github.com/Edo1993/otus_23/blob/master/openvpn/21.png)
+
+ ![Image_alt](https://github.com/Edo1993/otus_23/blob/master/21.png)
+
 На стороне клиента выполняем команды:
 
 - вытащить с сервера ключи
@@ -64,9 +66,8 @@ cp c* /etc/openvpn/client/
 systemctl -f enable openvpn@client.service
 systemctl start openvpn@client.service
 ```
-![Img_alt](https://github.com/Edo1993/otus_23/blob/master/openvpn/22.png)
+ ![Image_alt](https://github.com/Edo1993/otus_23/blob/master/15.png)
 
-После старта сервиса - не добавляется маршшрут, и, соответственно, туннель не создаётся
-![Img_alt](https://github.com/Edo1993/otus_23/blob/master/openvpn/23.png)
 
-![Img_alt](https://github.com/Edo1993/otus_23/blob/master/openvpn/24.png)
+После старта сервиса - не добавляется маршрут, и, соответственно, туннель не создаётся
+ ![Image_alt](https://github.com/Edo1993/otus_23/blob/master/14.png)
