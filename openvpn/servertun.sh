@@ -31,7 +31,7 @@ cp -a /etc/openvpn/easy-rsa/pki/issued/client.crt /etc/openvpn/keys/
 cp -a /etc/openvpn/easy-rsa/pki/private/client.key /etc/openvpn/keys/
 mv /vagrant/server.conf /etc/openvpn/
 mkdir /etc/openvpn/ccd && mkdir /var/log/openvpn
-echo "iroute 192.168.10.0 255.255.255.0" > /etc/openvpn/ccd/client
+# # # echo "iroute 192.168.10.0 255.255.255.0" > /etc/openvpn/ccd/client
 cp /etc/openvpn/keys/ca.crt /opt/ca.crt
 cp /etc/openvpn/keys/client.crt /opt/client.crt
 cp /etc/openvpn/keys/client.key /opt/client.key
@@ -40,4 +40,3 @@ chmod -R 0777 /opt/
 setenforce 0
 systemctl -f enable openvpn@server.service
 systemctl start openvpn@server.service
-
