@@ -5,7 +5,7 @@ MACHINES = {
 :servertun => {
         :box_name => "centos/7",
         :net => [
-                   {ip: '192.168.10.150', adapter: 2, netmask: "255.255.255.0", virtualbox__intnet: "vpn-net"},
+                   {ip: '192.168.10.150', adapter: 2, bridge: "wlp2s0"},
                 ]
   },
 }
